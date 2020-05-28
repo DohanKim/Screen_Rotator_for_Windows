@@ -8,8 +8,8 @@ Application to rotate screen orientation in Windows
 ## Installation
 
 - Clone the repository
-  $ git clone https://github.com/DohanKim/Screen_Rotator_for_Windows.git
+``` $ git clone https://github.com/DohanKim/Screen_Rotator_for_Windows.git ```
 - Install dependencies
-  $ pip install -r requirements.txt
+``` $ pip install -r requirements.txt ```
 - Run the program
-  $ python main.py
+``` $ python main.py ```
