@@ -1,6 +1,7 @@
 import win32api as win32
 import win32con
 import sys
+import os
 from pynput.keyboard import Key, KeyCode, Listener
 from infi.systray import SysTrayIcon
 
@@ -50,6 +51,15 @@ def on_press(key):
 def on_release(key):
     pressed_keys.discard(key)
 
+def resource_path(relative_path):
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 if __name__ == "__main__":
     listener = Listener(on_press=on_press, on_release=on_release)
     listener.start()
@@ -63,5 +73,7 @@ if __name__ == "__main__":
         ("(180) Flipped Landscape", None, lambda s: set_display_orientation(180)),
         ("(270) Flipped Portrait", None, lambda s: set_display_orientation(270)),
     )
-    systray = SysTrayIcon("icon.ico", "Screen rotator", menu_options, on_quit=exit_listener)
+    systray = SysTrayIcon(resource_path("rotate.ico"), "Screen Rotator", menu_options, on_quit=exit_listener)
     systray.start()
+
+# pyinstaller main.spec
