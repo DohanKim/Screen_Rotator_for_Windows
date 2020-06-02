@@ -6,7 +6,10 @@ block_cipher = None
 a = Analysis(['main.py'],
              pathex=['C:\\Programming\\python\\screen_rotator'],
              binaries=[],
-             datas=[('C:\\Programming\\python\\screen_rotator\\rotate.ico', '.')],
+             datas=[
+               ('C:\\Programming\\python\\screen_rotator\\rotate.ico', '.'),
+               ('C:\\Programming\\python\\screen_rotator\\checked.ico', '.'),
+             ],
              hiddenimports=['pkg_resources'],
              hookspath=[],
              runtime_hooks=[],
