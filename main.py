@@ -101,4 +101,4 @@ if __name__ == "__main__":
     systray = SysTrayIcon(resource_path("rotate.ico"), "Screen Rotator", menu_options, on_quit=exit_listener)
     systray.start()
 
-# pyinstaller main.spec
+# pyinstaller main.py --onefile --hidden-import=pkg_resources --windowed --add-data checked.ico;. --add-data rotate.ico;.

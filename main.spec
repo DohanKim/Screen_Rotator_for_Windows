@@ -6,10 +6,7 @@ block_cipher = None
 a = Analysis(['main.py'],
              pathex=['C:\\Programming\\python\\screen_rotator'],
              binaries=[],
-             datas=[
-               ('C:\\Programming\\python\\screen_rotator\\rotate.ico', '.'),
-               ('C:\\Programming\\python\\screen_rotator\\checked.ico', '.'),
-             ],
+             datas=[('checked.ico', '.'), ('rotate.ico', '.')],
              hiddenimports=['pkg_resources'],
              hookspath=[],
              runtime_hooks=[],
@@ -18,7 +15,6 @@ a = Analysis(['main.py'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
-
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
