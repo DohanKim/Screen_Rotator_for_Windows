@@ -49,8 +49,6 @@ def is_combination_pressed(combination):
 def on_press(key):
     pressed_keys.add(key)
 
-    print("Keys pressed:", pressed_keys)
-
     combination_to_orientation = {
         frozenset([Key.ctrl_l, Key.alt_l, Key.up]): 0,
         frozenset([Key.ctrl_l, Key.alt_r, Key.up]): 0,
