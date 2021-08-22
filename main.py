@@ -53,9 +53,21 @@ def on_press(key):
 
     combination_to_orientation = {
         frozenset([Key.ctrl_l, Key.alt_l, Key.up]): 0,
+        frozenset([Key.ctrl_l, Key.alt_r, Key.up]): 0,
+        frozenset([Key.ctrl_r, Key.alt_l, Key.up]): 0,
+        frozenset([Key.ctrl_r, Key.alt_r, Key.up]): 0,
         frozenset([Key.ctrl_l, Key.alt_l, Key.right]): 90,
+        frozenset([Key.ctrl_l, Key.alt_r, Key.right]): 90,
+        frozenset([Key.ctrl_r, Key.alt_l, Key.right]): 90,
+        frozenset([Key.ctrl_r, Key.alt_r, Key.right]): 90,
         frozenset([Key.ctrl_l, Key.alt_l, Key.down]): 180,
+        frozenset([Key.ctrl_l, Key.alt_r, Key.down]): 180,
+        frozenset([Key.ctrl_r, Key.alt_l, Key.down]): 180,
+        frozenset([Key.ctrl_r, Key.alt_r, Key.down]): 180,
         frozenset([Key.ctrl_l, Key.alt_l, Key.left]): 270,
+        frozenset([Key.ctrl_l, Key.alt_r, Key.left]): 270,
+        frozenset([Key.ctrl_r, Key.alt_l, Key.left]): 270,
+        frozenset([Key.ctrl_r, Key.alt_r, Key.left]): 270,
     }
 
     for combination, orientation in combination_to_orientation.items():
