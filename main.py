@@ -17,6 +17,7 @@ def get_display_names():
 device_num = 0
 
 def set_device_num(num):
+    global device_num
     device_num = num
 
 def set_display_orientation(orientation, device_num = 0):
