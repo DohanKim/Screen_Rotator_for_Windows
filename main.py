@@ -17,6 +17,7 @@ def get_display_names():
 device_num = 0
 
 def set_device_num(num):
+    global device_num
     device_num = num
 
 def set_display_orientation(orientation, device_num = 0):
@@ -48,13 +49,23 @@ def is_combination_pressed(combination):
 def on_press(key):
     pressed_keys.add(key)
 
-    print("Keys pressed:", pressed_keys)
-
     combination_to_orientation = {
         frozenset([Key.ctrl_l, Key.alt_l, Key.up]): 0,
+        frozenset([Key.ctrl_l, Key.alt_r, Key.up]): 0,
+        frozenset([Key.ctrl_r, Key.alt_l, Key.up]): 0,
+        frozenset([Key.ctrl_r, Key.alt_r, Key.up]): 0,
         frozenset([Key.ctrl_l, Key.alt_l, Key.right]): 90,
+        frozenset([Key.ctrl_l, Key.alt_r, Key.right]): 90,
+        frozenset([Key.ctrl_r, Key.alt_l, Key.right]): 90,
+        frozenset([Key.ctrl_r, Key.alt_r, Key.right]): 90,
         frozenset([Key.ctrl_l, Key.alt_l, Key.down]): 180,
+        frozenset([Key.ctrl_l, Key.alt_r, Key.down]): 180,
+        frozenset([Key.ctrl_r, Key.alt_l, Key.down]): 180,
+        frozenset([Key.ctrl_r, Key.alt_r, Key.down]): 180,
         frozenset([Key.ctrl_l, Key.alt_l, Key.left]): 270,
+        frozenset([Key.ctrl_l, Key.alt_r, Key.left]): 270,
+        frozenset([Key.ctrl_r, Key.alt_l, Key.left]): 270,
+        frozenset([Key.ctrl_r, Key.alt_r, Key.left]): 270,
     }
 
     for combination, orientation in combination_to_orientation.items():
